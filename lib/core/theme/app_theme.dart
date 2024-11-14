@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'app_colors.dart';
-import 'app_text_theme.dart';
 
 class AppTheme {
 
@@ -36,7 +35,6 @@ class AppTheme {
         borderRadius: BorderRadius.circular(18),
       ),
     ),
-    textTheme: AppTextTheme.darkTextTheme,
     inputDecorationTheme: InputDecorationTheme(
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8),

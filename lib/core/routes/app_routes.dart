@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:snake_game/presentation/bindings/intro_binding.dart';
 import 'package:snake_game/presentation/pages/game_over_page.dart';
 import 'package:snake_game/presentation/pages/intro_page.dart';
 import '../../presentation/bindings/game_binding.dart';
@@ -13,6 +14,7 @@ class AppRoutes {
     GetPage(
       name: intro,
       page: () => const IntroPage(),
+      binding: IntroBinding(),
     ),
     GetPage(
       name: game,
