@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+	<title>red_food</title>
+	<defs>
+		<image  width="26" height="26" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAAAXNSR0IB2cksfwAAADxQTFRFAAAAoUMAqkkFu0UCwkMAw0MAvEQCrEoFnEcAt0YDt0YDqkkFqkkFvEQCu0UCq0gGt0cDtkYDmVUAqkgGyYZybQAAABR0Uk5TABO99P7/9LsS6um8uvPzuenpD7huR+KYAAAAWklEQVR4nO3SsQ6AIBAD0NYAHsr/f6abiRLDqYuJyjk70PUNHVqCZ3CPduRC4YZafOGYqwL0DGqQ0D17rj56Q4BGf6SPKc0DRKbVoIEic1XScU5xubwuGoNOOy+hEMPD4cwsAAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="3" y="3"/>
+</svg>
