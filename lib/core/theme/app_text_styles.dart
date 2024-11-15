@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'app_colors.dart';
 
 class AppTextStyles {
   static const TextStyle titleLarge = TextStyle(
@@ -8,4 +7,6 @@ class AppTextStyles {
     fontStyle: FontStyle.italic,
     fontWeight: FontWeight.bold,
   );
+  static const TextStyle score = TextStyle(fontSize: 16.0);
+
 }
