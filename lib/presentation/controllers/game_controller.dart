@@ -18,10 +18,10 @@ class GameController extends GetxController with GetTickerProviderStateMixin {
   late AnimationController snakeController;
 
   /// Snake and game field settings
-  RxList<int> snake = <int>[404, 405, 406, 407].obs;
-  final int noOfSquares = 500;
-  final Duration snakeSpeed = Duration(milliseconds: 250);
-  final int squareSize = 20;
+  RxList<int> snake = <int>[200, 201, 202, 203].obs;
+  final int noOfSquares = 435;
+  final int _snakeSpeedInMilliSeconds = 250;
+  final int squareSize = 15;
 
   /// Direction and food position
   Rx<SnakeDirection> currentSnakeDirection = SnakeDirection.right.obs;
@@ -52,14 +52,14 @@ class GameController extends GetxController with GetTickerProviderStateMixin {
 
   /// Initialize the animation controller
   void _initializeAnimationController() {
-    snakeController = AnimationController(vsync: this, duration: snakeSpeed);
+    snakeController = AnimationController(vsync: this, duration: Duration(milliseconds: _snakeSpeedInMilliSeconds));
     snakeAnimation = CurvedAnimation(curve: Curves.easeInOut, parent: snakeController);
     snakeController.forward();
   }
 
   /// Start the game timer
   void startGame() {
-    Timer.periodic(snakeSpeed, (Timer timer) {
+    Timer.periodic(Duration(milliseconds: _snakeSpeedInMilliSeconds), (Timer timer) {
       _updateSnake();
       if(hasStarted.value) timer.cancel();
     });

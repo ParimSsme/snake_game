@@ -17,25 +17,25 @@ class GridCell extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = GameController.to;
 
-    return Container(
-      margin: EdgeInsets.all(controller.snake.contains(index) ? 0 : 0.5),
-      decoration: BoxDecoration(
-        color: AppColors.gameCellColor,
-        borderRadius: BorderRadius.circular(3),
-      ),
-      child: Obx(
-        () => index == controller.snakeFoodPosition.value
+    return Obx(
+      () => Container(
+        margin: EdgeInsets.all(controller.snake.contains(index) ? 0 : 0.5),
+        decoration: BoxDecoration(
+          color: AppColors.gameCellColor,
+          borderRadius: BorderRadius.circular(3),
+        ),
+        child: index == controller.snakeFoodPosition.value
             ? Image.asset(AppImageAssets.food)
             : index == controller.snake.last
                 ? SnakeHead(
                     direction: controller.currentSnakeDirection.value,
                   )
-                : index == controller.snake.first
-                    ? SnakeTail(
-                        direction: controller.currentSnakeDirection.value)
-                    : controller.snake.contains(index)
-                        ? Image.asset(AppImageAssets.snakeBody)
-                        : const SizedBox.shrink(),
+                : controller.snake.contains(index)
+                    ? ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Image.asset(AppImageAssets.snakeBody),
+                      )
+                    : const SizedBox.shrink(),
       ),
     );
   }
@@ -69,41 +69,6 @@ class SnakeHead extends StatelessWidget {
       child: Image.asset(
         AppImageAssets
             .snakeHead, // Add the image file to your assets folder and reference here
-        width: 50, // Set the desired size
-        height: 50,
-      ),
-    );
-  }
-}
-
-class SnakeTail extends StatelessWidget {
-  final SnakeDirection direction;
-
-  const SnakeTail({super.key, required this.direction});
-
-  @override
-  Widget build(BuildContext context) {
-    double angle;
-    switch (direction) {
-      case SnakeDirection.left:
-        angle = -pi / 2; // Rotate 90° counter-clockwise
-        break;
-      case SnakeDirection.right:
-        angle = pi / 2; // Rotate 90° clockwise
-        break;
-      case SnakeDirection.down:
-        angle = pi; // Rotate 180°
-        break;
-      case SnakeDirection.up:
-      default:
-        angle = 0; // No rotation for right
-    }
-
-    return Transform.rotate(
-      angle: angle,
-      child: Image.asset(
-        AppImageAssets
-            .snakeTail, // Add the image file to your assets folder and reference here
         width: 50, // Set the desired size
         height: 50,
       ),

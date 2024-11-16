@@ -54,11 +54,13 @@ class GamePage extends GetView<GameController> {
           onHorizontalDragUpdate: controller.onHorizontalDragUpdate,
           child: SizedBox(
             width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
             child: GridView.builder(
               itemCount: controller.noOfSquares,
               physics: const NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: controller.squareSize,
+                // childAspectRatio: (1 / 1),
               ),
               itemBuilder: (context, index) {
                 /// Helper method to build individual grid cells
