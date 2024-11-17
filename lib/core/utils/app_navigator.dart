@@ -12,6 +12,6 @@ class AppNavigator {
   Future? navigateToGameOver({
     required int score,
   }) =>
-      Get.toNamed(AppRoutes.gameOver, arguments: score);
+      Get.offAndToNamed(AppRoutes.gameOver, arguments: score);
 
 }
