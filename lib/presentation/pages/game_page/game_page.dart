@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:snake_game/presentation/controllers/game_controller.dart';
-import 'package:snake_game/presentation/pages/game_page/widgets/grid_cell.dart';
+import 'package:snake_game/presentation/pages/game_page/widgets/game_cell.dart';
 import '../../../core/widgets/app_animated_icon_button.dart';
 
 class GamePage extends GetView<GameController> {
@@ -26,7 +26,6 @@ class GamePage extends GetView<GameController> {
             icon: const Icon(Icons.arrow_back_ios),
           ),
         ),
-
         actions: [
           ///  Play/Pause game button
           Padding(
@@ -58,11 +57,19 @@ class GamePage extends GetView<GameController> {
               physics: const NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: controller.squareSize,
-                // childAspectRatio: (1 / 1),
               ),
               itemBuilder: (context, index) {
-                /// Helper method to build individual grid cells
-                return GridCell(index: index);
+
+                return Obx(
+                  () => GameCell(
+                    index: index,
+                    isSnakeBody: controller.snake.contains(index),
+                    isSnakeHead: index == controller.snake.last,
+                    isSnakeFood: index == controller.snakeFoodPosition.value,
+                    snakeDirection: controller.currentSnakeDirection.value,
+                  ),
+                );
+
               },
             ),
           ),
