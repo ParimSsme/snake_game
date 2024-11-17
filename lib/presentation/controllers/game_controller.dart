@@ -133,6 +133,7 @@ class GameController extends GetxController with GetTickerProviderStateMixin {
     if (isGameOver()) {
       hasStarted.value = false;
       _navigateToGameOver();
+      onClose();
     }
   }
 
