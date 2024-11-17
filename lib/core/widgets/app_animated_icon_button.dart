@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class AppIconButton extends StatelessWidget {
+class AppAnimatedIconButton extends StatelessWidget {
   final AnimatedIconData icon;
   final bool isEnabled;
   final VoidCallback onPressed;
   final Animation<double> progress;
-  const AppIconButton({
+  const AppAnimatedIconButton({
     super.key,
     required this.icon,
     required this.isEnabled,

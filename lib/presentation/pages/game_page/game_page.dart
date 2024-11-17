@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:snake_game/presentation/controllers/game_controller.dart';
 import 'package:snake_game/presentation/pages/game_page/widgets/grid_cell.dart';
-import '../../../core/widgets/app_icon_button.dart';
+import '../../../core/widgets/app_animated_icon_button.dart';
 
 class GamePage extends GetView<GameController> {
   const GamePage({super.key});
@@ -21,22 +21,20 @@ class GamePage extends GetView<GameController> {
           padding: const EdgeInsets.only(left: 16.0),
 
           /// Back button
-          child: AppIconButton(
+          child: IconButton(
             onPressed: controller.onBackClicked,
-            isEnabled: true,
-            icon: AnimatedIcons.arrow_menu,
-            progress: controller.snakeAnimation,
+            icon: const Icon(Icons.arrow_back_ios),
           ),
         ),
+
         actions: [
-          /// Start new game button
+          ///  Play/Pause game button
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
             child: Obx(
-              () => AppIconButton(
+              () => AppAnimatedIconButton(
                 onPressed: () {
                   controller.toggleGame();
-                  // controller.startStopGame();
                 },
                 progress: controller.snakeAnimation,
                 isEnabled: true,
