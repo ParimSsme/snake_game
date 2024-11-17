@@ -59,25 +59,25 @@ class _SnakeHead extends StatelessWidget {
     double angle;
     switch (direction) {
       case SnakeDirection.left:
-        angle = -pi / 2; // Rotate 90° counter-clockwise
+        angle = -pi / 2; /// Rotate 90° counter-clockwise
         break;
       case SnakeDirection.right:
-        angle = pi / 2; // Rotate 90° clockwise
+        angle = pi / 2; /// Rotate 90° clockwise
         break;
       case SnakeDirection.down:
-        angle = pi; // Rotate 180°
+        angle = pi; /// Rotate 180°
         break;
       case SnakeDirection.up:
       default:
-        angle = 0; // No rotation for right
+        angle = 0; /// No rotation for up
     }
 
     return Transform.rotate(
       angle: angle,
       child: Image.asset(
         AppImageAssets
-            .snakeHead, // Add the image file to your assets folder and reference here
-        width: 50, // Set the desired size
+            .snakeHead,
+        width: 50,
         height: 50,
       ),
     );

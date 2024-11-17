@@ -28,18 +28,22 @@ class GameOverPage extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 20.0),
+
+              /// score result text
               Text.rich(
                 textAlign: TextAlign.center,
                 TextSpan(
                   style: AppTextStyles.titleMedium,
-                  text: 'Your Score is:  ', // default text style
+                  text: 'Your Score is:  ',
                   children: <TextSpan>[
                     TextSpan(
                         text: score.toString(), style: AppTextStyles.score),
                   ],
                 ),
               ),
+
               const Spacer(),
+
               TextButton(
                 onPressed: () {
                   AppNavigator.to.navigateToGame();

@@ -26,6 +26,7 @@ class GamePage extends GetView<GameController> {
             icon: const Icon(Icons.arrow_back_ios),
           ),
         ),
+
         actions: [
           ///  Play/Pause game button
           Padding(

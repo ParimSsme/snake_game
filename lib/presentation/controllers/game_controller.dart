@@ -126,6 +126,7 @@ class GameController extends GetxController with GetTickerProviderStateMixin {
       snake.removeAt(0);
     }
 
+    /// Refresh getx snake list to update snake movement
     snake.refresh();
 
     /// Handle game over state
@@ -166,7 +167,7 @@ class GameController extends GetxController with GetTickerProviderStateMixin {
     AppNavigator.to.navigateToGameOver(score: playerScore.value);
   }
 
-  /// Update the snake's direction based on user input
+  /// Update the snake's direction based on user drag
   void updateDirection(SnakeDirection direction) {
     if ((direction == SnakeDirection.down && currentSnakeDirection.value != SnakeDirection.up) ||
         (direction == SnakeDirection.up && currentSnakeDirection.value != SnakeDirection.down) ||
