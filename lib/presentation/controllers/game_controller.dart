@@ -19,7 +19,7 @@ class GameController extends GetxController with GetTickerProviderStateMixin {
 
   /// Snake and game field settings
   RxList<int> snake = <int>[200, 201, 202, 203].obs;
-  final int noOfSquares = 435;
+  final int noOfSquares = 405;
   final int _snakeSpeedInMilliSeconds = 250;
   final int squareSize = 15;
 

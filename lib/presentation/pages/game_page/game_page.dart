@@ -46,13 +46,13 @@ class GamePage extends GetView<GameController> {
           ),
         ],
       ),
-      body: Center(
+      body: SafeArea(
         child: GestureDetector(
           onVerticalDragUpdate: controller.onVerticalDragUpdate,
           onHorizontalDragUpdate: controller.onHorizontalDragUpdate,
           child: SizedBox(
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
+            height: MediaQuery.of(context).size.height * 0.89,
             child: GridView.builder(
               itemCount: controller.noOfSquares,
               physics: const NeverScrollableScrollPhysics(),
